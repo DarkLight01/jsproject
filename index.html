@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rajveer's Blog - Technology, Travel and Food stories by an AIML student.">
+<title>Rajveer's Blog | Tech, Travel & Food</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="#home">
+<span class="brand-mark">R</span>
+<span class="brand-text">Rajveer's <em>Blog</em></span>
+</a>
+<nav id="menu" class="nav">
+<a href="#home">Home</a>
+<a href="#posts">Posts</a>
+<a href="#write">Write</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+<div class="header-actions">
+<button class="icon-btn" onclick="darkMode()" id="themeBtn" aria-label="Toggle theme">◐</button>
+<a href="#write" class="btn btn-primary btn-sm hide-mobile">+ New Post</a>
+<button id="menuBtn" class="icon-btn menu-only" onclick="toggleMenu()" aria-label="Menu">☰</button>
+</div>
+</div>
+</header>
+<main>
+<section id="home" class="hero">
+<div class="hero-inner">
+<div class="hero-copy">
+<span class="pill">✦ AIML Student • PPSU • College Project</span>
+<h1>Stories on <span class="gradient">tech, travel</span> & food.</h1>
+<p class="lede">Hi, I'm Rajveer. I break down what I'm learning in AI & web development, share budget travel guides, and hunt down the best street food.</p>
+<div class="hero-buttons">
+<a href="#posts" class="btn btn-primary">Explore Posts →</a>
+<a href="#about" class="btn btn-ghost">About Me</a>
+</div>
+<div class="hero-stats">
+<div><strong>4+</strong><span>Posts published</span></div>
+<div><strong>3</strong><span>Topics covered</span></div>
+<div><strong>100%</strong><span>Built with HTML/CSS/JS</span></div>
+</div>
+</div>
+<div class="hero-media">
+<img src="https://picsum.photos/seed/myblog123/800/520" alt="Blog cover collage">
+<div class="hero-card">
+<strong>🔥 Popular this week</strong>
+<span>My Trip to Manali — 3 days under ₹6000</span>
+<a href="#posts">Read story →</a>
+</div>
+</div>
+</div>
+</section>
+<section id="posts" class="section">
+<div class="container">
+<div class="section-head">
+<div>
+<p class="eyebrow">Blog Posts</p>
+<h2>Latest stories</h2>
+<p class="muted">Search, filter by topic, like and join the discussion.</p>
+</div>
+<div class="toolbar">
+<div class="search-wrap">
+<span class="search-icon">⌕</span>
+<input type="text" id="searchBox" placeholder="Search posts... try JavaScript" onkeyup="searchPosts()" autocomplete="off">
+</div>
+</div>
+</div>
+<div class="filters">
+<button class="chip active" data-filter="all" onclick="filterPosts('all')">All</button>
+<button class="chip" data-filter="tech" onclick="filterPosts('tech')">💻 Tech</button>
+<button class="chip" data-filter="travel" onclick="filterPosts('travel')">✈ Travel</button>
+<button class="chip" data-filter="food" onclick="filterPosts('food')">🍜 Food</button>
+<span class="result-count" id="resultCount"></span>
+</div>
+<div class="posts-grid" id="postsGrid">
+<article class="post" data-category="tech">
+<div class="post-media">
+<img src="https://picsum.photos/seed/htmlcode/600/340" alt="Learning HTML" loading="lazy">
+<span class="badge tech">Tech</span>
+</div>
+<div class="post-body">
+<h3>How I Started Learning HTML</h3>
+<p class="date">12 Sep 2026 • 3 min read</p>
+<p class="excerpt">HTML looked confusing at first — all those tags. Here's the simple routine that got me to my first page.</p>
+<p id="more1" class="more" style="display:none;">I started with just the p, img and a tags and built one tiny page every day after watching YouTube tutorials. My rule: practice 1 hour daily, don't try to memorize everything. Build small, break things, fix them — that's how it clicks. Once structure made sense, CSS suddenly felt much easier.</p>
+<div class="post-actions">
+<button class="btn btn-ghost btn-sm" id="rbtn1" onclick="readMore(1)">Read More +</button>
+<button class="like-btn" onclick="likePost(1)" aria-label="Like post 1">♥ <span id="like1">0</span></button>
+</div>
+<div class="comments">
+<div class="comment-form">
+<input type="text" id="cname1" placeholder="Your name" maxlength="30">
+<input type="text" id="ctext1" placeholder="Write a comment..." maxlength="200">
+<button class="btn btn-primary btn-sm" onclick="addComment(1)">Post</button>
+</div>
+<div id="clist1" class="comment-list"></div>
+</div>
+</div>
+</article>
+<article class="post" data-category="travel">
+<div class="post-media">
+<img src="https://picsum.photos/seed/manali123/600/340" alt="Manali trip" loading="lazy">
+<span class="badge travel">Travel</span>
+</div>
+<div class="post-body">
+<h3>My Trip to Manali</h3>
+<p class="date">28 Aug 2026 • 4 min read</p>
+<p class="excerpt">Snow, freezing nights, and a 3-day budget trip with friends — here's the full breakdown.</p>
+<p id="more2" class="more" style="display:none;">We took an overnight bus from Delhi, split a cozy homestay, and spent 3 days chasing snow viewpoints and hot maggi. Total came to around ₹6000 per person including stay, food and local travel. My tip: go in a group of 4-6, book transport together, and carry proper winter layers — it gets really cold after sunset.</p>
+<div class="post-actions">
+<button class="btn btn-ghost btn-sm" id="rbtn2" onclick="readMore(2)">Read More +</button>
+<button class="like-btn" onclick="likePost(2)" aria-label="Like post 2">♥ <span id="like2">0</span></button>
+</div>
+<div class="comments">
+<div class="comment-form">
+<input type="text" id="cname2" placeholder="Your name" maxlength="30">
+<input type="text" id="ctext2" placeholder="Write a comment..." maxlength="200">
+<button class="btn btn-primary btn-sm" onclick="addComment(2)">Post</button>
+</div>
+<div id="clist2" class="comment-list"></div>
+</div>
+</div>
+</article>
+<article class="post" data-category="food">
+<div class="post-media">
+<img src="https://picsum.photos/seed/delhifood/600/340" alt="Delhi street food" loading="lazy">
+<span class="badge food">Food</span>
+</div>
+<div class="post-body">
+<h3>Best Street Food in Delhi</h3>
+<p class="date">15 Aug 2026 • 3 min read</p>
+<p class="excerpt">Chole bhature, momos, golgappe — where to eat well in Delhi for just ₹200-300.</p>
+<p id="more3" class="more" style="display:none;">Chandni Chowk is my top pick for a food walk: aloo tikki, chole bhature, golgappe and jalebi within a few lanes. Most plates are ₹80-150, so you can eat like a king for ₹200-300. Go hungry, carry cash, start early to beat the crowd, and don't skip the fresh lime soda between stops.</p>
+<div class="post-actions">
+<button class="btn btn-ghost btn-sm" id="rbtn3" onclick="readMore(3)">Read More +</button>
+<button class="like-btn" onclick="likePost(3)" aria-label="Like post 3">♥ <span id="like3">0</span></button>
+</div>
+<div class="comments">
+<div class="comment-form">
+<input type="text" id="cname3" placeholder="Your name" maxlength="30">
+<input type="text" id="ctext3" placeholder="Write a comment..." maxlength="200">
+<button class="btn btn-primary btn-sm" onclick="addComment(3)">Post</button>
+</div>
+<div id="clist3" class="comment-list"></div>
+</div>
+</div>
+</article>
+<article class="post" data-category="tech">
+<div class="post-media">
+<img src="https://picsum.photos/seed/jscode/600/340" alt="JavaScript basics" loading="lazy">
+<span class="badge tech">Tech</span>
+</div>
+<div class="post-body">
+<h3>What is JavaScript?</h3>
+<p class="date">02 Aug 2026 • 5 min read</p>
+<p class="excerpt">The language that makes buttons, search and forms actually work — explained simply.</p>
+<p id="more4" class="more" style="display:none;">JavaScript handles clicks, form validation, and showing or hiding content without reloading the page. I started with getElementById, functions, if-else and loops. It felt hard for a week, then practice made it click. This very blog uses it for live search, filters, likes and comments — open the console and try things out.</p>
+<div class="post-actions">
+<button class="btn btn-ghost btn-sm" id="rbtn4" onclick="readMore(4)">Read More +</button>
+<button class="like-btn" onclick="likePost(4)" aria-label="Like post 4">♥ <span id="like4">0</span></button>
+</div>
+<div class="comments">
+<div class="comment-form">
+<input type="text" id="cname4" placeholder="Your name" maxlength="30">
+<input type="text" id="ctext4" placeholder="Write a comment..." maxlength="200">
+<button class="btn btn-primary btn-sm" onclick="addComment(4)">Post</button>
+</div>
+<div id="clist4" class="comment-list"></div>
+</div>
+</div>
+</article>
+</div>
+<div id="emptyState" class="empty" style="display:none;">
+<strong>No posts found 😕</strong>
+<p>Try a different keyword or category.</p>
+<button class="btn btn-ghost btn-sm" onclick="resetFilters()">Clear search & filters</button>
+</div>
+<div id="newPosts" class="posts-grid new-posts"></div>
+</div>
+</section>
+<section id="write" class="section alt">
+<div class="container narrow">
+<div class="card form-card">
+<p class="eyebrow">✍️ Creator Studio</p>
+<h2>Write a new post</h2>
+<p class="muted">Publish instantly. It stays saved in this browser.</p>
+<label class="field-label" for="ptitle">Title</label>
+<input type="text" id="ptitle" placeholder="e.g. 5 VS Code shortcuts I use daily" maxlength="80">
+<div class="form-row">
+<div>
+<label class="field-label" for="pcat">Category</label>
+<select id="pcat">
+<option value="tech">💻 Tech</option>
+<option value="travel">✈ Travel</option>
+<option value="food">🍜 Food</option>
+</select>
+</div>
+<div>
+<label class="field-label" for="pimage">Cover image URL <span class="optional">(optional)</span></label>
+<input type="url" id="pimage" placeholder="https://...">
+</div>
+</div>
+<label class="field-label" for="pcontent">Content</label>
+<textarea id="pcontent" rows="5" placeholder="Share your story, tips, costs, code..."></textarea>
+<div class="form-footer">
+<span class="muted small" id="charCount">0 characters</span>
+<button class="btn btn-primary" onclick="addPost()">Publish Post →</button>
+</div>
+</div>
+</div>
+</section>
+<section id="about" class="section">
+<div class="container about-grid">
+<div class="card about-card">
+<img src="https://picsum.photos/seed/myphoto/240/240" class="profile" alt="Rajveer portrait">
+<h2>About Me</h2>
+<p class="muted">AIML @ PPSU • Gamer • Builder</p>
+<p>I'm Rajveer, studying AI & Machine Learning at PPSU. I love sports, games, and trying new code and recipes in my free time. This blog is my college project — designed and coded with plain HTML, CSS and JavaScript.</p>
+<div class="tags">
+<span>Python</span><span>Machine Learning</span><span>Web Dev</span><span>Travel</span><span>Food</span>
+</div>
+</div>
+<div class="card gallery-card">
+<h2>Photo Gallery</h2>
+<p class="muted">Snapshots from trips and campus life.</p>
+<div class="gallery">
+<img src="https://picsum.photos/seed/pic1/400/300" alt="Gallery 1" loading="lazy">
+<img src="https://picsum.photos/seed/pic2/400/300" alt="Gallery 2" loading="lazy">
+<img src="https://picsum.photos/seed/pic3/400/300" alt="Gallery 3" loading="lazy">
+<img src="https://picsum.photos/seed/pic4/400/300" alt="Gallery 4" loading="lazy">
+<img src="https://picsum.photos/seed/pic5/400/300" alt="Gallery 5" loading="lazy">
+<img src="https://picsum.photos/seed/pic6/400/300" alt="Gallery 6" loading="lazy">
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="section alt">
+<div class="container narrow">
+<div class="newsletter">
+<h2>Get new posts in your inbox</h2>
+<p>One short email when I publish. No spam, unsubscribe anytime.</p>
+<div class="newsletter-form">
+<input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+<button class="btn btn-primary" onclick="subscribe()">Subscribe</button>
+</div>
+<p class="small muted">Join 200+ readers following the journey.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-inner">
+<div>
+<strong>Rajveer's Blog</strong>
+<p class="muted small">Made with ♥ by Rajveer (AIML, PPSU) • HTML • CSS • JS</p>
+</div>
+<div class="footer-links">
+<a href="#home">Home</a>
+<a href="#posts">Posts</a>
+<a href="#write">Write</a>
+<a href="#about">About</a>
+</div>
+</div>
+</footer>
+<div id="toast" class="toast"></div>
+<button id="toTop" class="to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
